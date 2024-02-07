@@ -56,6 +56,8 @@ $libri = getAllBooks($mysqli);
         </thead>
         <tbody class="table-group-divider">
             <?php
+
+            // Mi ciclo tutti i libri presenti nel database e li stampo
             foreach ($libri as $key => $libro) {
                 echo '<tr class="text-center">
                         <th scope="row">' . $libro['id'] . '</th>
@@ -71,43 +73,6 @@ $libri = getAllBooks($mysqli);
                             </div>
                         </th>
                     </tr>';
-
-                // Modale per l'aggiunta di un libro
-                echo '<div class="modal fade" id="modaleAggiunta" tabindex="-1" aria-labelledby="modaleAggiunta" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h1 class="modal-title fs-5">Dati del libro</h1>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    <form method="POST" action="gestione.php">
-                                        <div class="mb-3">
-                                            <label for="titoloLibro" class="form-label">Titolo</label>
-                                            <input type="text" class="form-control" id="titoloLibro" aria-describedby="titoloLibro"
-                                                name="titolo">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="autoreLibro" class="form-label">Autore</label>
-                                            <input type="text" class="form-control" id="autoreLibro" name="autore">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="annoLibro" class="form-label">Anno di pubblicazione</label>
-                                            <input type="number" step="1" class="form-control" id="annoLibro" name="anno">
-                                        </div>
-                                        <div class="mb-3">
-                                            <label for="genereLibro" class="form-label">Genere</label>
-                                            <input type="text" class="form-control" id="genereLibro" name="genere">
-                                        </div>
-                                        <div class="modal-footer border-0">
-                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-                                            <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Aggiungi il libro</button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>';
 
                 // Modale per l'aggiornamento di un libro
                 echo '<div class="modal fade" id="modaleUpdate_' . $libro['id'] . '" tabindex="-1" aria-labelledby="modaleUpdate" aria-hidden="true">
@@ -132,7 +97,7 @@ $libri = getAllBooks($mysqli);
                                         </div>
                                         <div class="mb-3">
                                             <label for="annoLibro" class="form-label">Anno di pubblicazione</label>
-                                            <input type="number" step="1" class="form-control" id="annoLibro" name="annoUp"
+                                            <input type="number" step="1" min="0" max="2024" class="form-control" id="annoLibro" name="annoUp"
                                                 value="' . $libro['anno_pubblicazione'] . ' ">
                                         </div>
                                         <div class="mb-3">
@@ -160,3 +125,41 @@ $libri = getAllBooks($mysqli);
 </body>
 
 </html>
+
+
+// Modale per l'aggiunta di un libro
+<div class="modal fade" id="modaleAggiunta" tabindex="-1" aria-labelledby="modaleAggiunta" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5">Dati del libro</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" action="gestione.php">
+                    <div class="mb-3">
+                        <label for="titoloLibro" class="form-label">Titolo</label>
+                        <input type="text" class="form-control" id="titoloLibro" aria-describedby="titoloLibro"
+                            name="titolo">
+                    </div>
+                    <div class="mb-3">
+                        <label for="autoreLibro" class="form-label">Autore</label>
+                        <input type="text" class="form-control" id="autoreLibro" name="autore">
+                    </div>
+                    <div class="mb-3">
+                        <label for="annoLibro" class="form-label">Anno di pubblicazione</label>
+                        <input type="number" step="1" class="form-control" id="annoLibro" name="anno">
+                    </div>
+                    <div class="mb-3">
+                        <label for="genereLibro" class="form-label">Genere</label>
+                        <input type="text" class="form-control" id="genereLibro" name="genere">
+                    </div>
+                    <div class="modal-footer border-0">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
+                        <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Aggiungi il libro</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>';

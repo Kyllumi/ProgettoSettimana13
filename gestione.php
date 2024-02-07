@@ -74,7 +74,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         addBook($mysqli, $book);
     }
-    
+
 } else if (isset($_REQUEST['action']) && $_REQUEST['action'] === 'remove') {
     removeBook($mysqli, $_REQUEST['id']);
     exit(header('Location: index.php'));
@@ -82,6 +82,33 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 ?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
