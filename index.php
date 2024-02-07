@@ -20,21 +20,13 @@ $libri = getAllBooks($mysqli);
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg text-white">
+    <nav class="navbar bg-body-tertiary">
         <div class="container-fluid">
-            <a class="navbar-brand text-white" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Link</a>
-                    </li>
-                </ul>
-            </div>
+            <a class="navbar-brand" href="#">
+                <img src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="Logo" width="30" height="24"
+                    class="d-inline-block align-text-top">
+                Mia Libreria
+            </a>
         </div>
     </nav>
 
@@ -43,7 +35,7 @@ $libri = getAllBooks($mysqli);
         Aggiungi un libro
     </button>
 
-    <table class="table table-dark table-hover container mt-4 border">
+    <table class="table table-hover container mt-4 border">
         <thead>
             <tr class="text-center">
                 <th scope="col">ID</th>
@@ -57,11 +49,21 @@ $libri = getAllBooks($mysqli);
         <tbody class="table-group-divider">
             <?php foreach ($libri as $key => $libro) { ?>
                 <tr class="text-center">
-                    <th scope="row"><?= $libro['id'] ?></th>
-                    <td><?= $libro['titolo'] ?></td>
-                    <td><?= $libro['autore'] ?></td>
-                    <td><?= $libro['anno_pubblicazione'] ?></td>
-                    <td><?= $libro['genere'] ?></td>
+                    <th scope="row">
+                        <?= $libro['id'] ?>
+                    </th>
+                    <td>
+                        <?= $libro['titolo'] ?>
+                    </td>
+                    <td>
+                        <?= $libro['autore'] ?>
+                    </td>
+                    <td>
+                        <?= $libro['anno_pubblicazione'] ?>
+                    </td>
+                    <td>
+                        <?= $libro['genere'] ?>
+                    </td>
                     <th>
                         <div class="d-flex justify-content-evenly align-items-center">
                             <a role="button" class="btn btn-warning px-2 py-1" data-bs-toggle="modal"
@@ -71,7 +73,8 @@ $libri = getAllBooks($mysqli);
                         </div>
                     </th>
                 </tr>
-                <div class="modal fade" id="modaleUpdate_<?= $libro['id'] ?>" tabindex="-1" aria-labelledby="modaleUpdate<?= $libro['id'] ?>" aria-hidden="true">
+                <div class="modal fade" id="modaleUpdate_<?= $libro['id'] ?>" tabindex="-1"
+                    aria-labelledby="modaleUpdate<?= $libro['id'] ?>" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -84,7 +87,8 @@ $libri = getAllBooks($mysqli);
                                     <div class="mb-3">
                                         <label for="titoloLibroUp" class="form-label">Titolo</label>
                                         <input type="text" class="form-control" id="titoloLibroUp"
-                                            aria-describedby="titoloLibroUp" name="titoloUp" value="<?= $libro['titolo'] ?>">
+                                            aria-describedby="titoloLibroUp" name="titoloUp"
+                                            value="<?= $libro['titolo'] ?>">
                                     </div>
                                     <div class="mb-3">
                                         <label for="autoreLibroUp" class="form-label">Autore</label>
@@ -102,8 +106,10 @@ $libri = getAllBooks($mysqli);
                                             value="<?= $libro['genere'] ?>">
                                     </div>
                                     <div class="modal-footer border-0">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-                                        <button type="submit" class="btn btn-primary" name="action" value="update">Aggiorna libro</button>
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Chiudi</button>
+                                        <button type="submit" class="btn btn-primary" name="action" value="update">Aggiorna
+                                            libro</button>
                                     </div>
                                 </form>
                             </div>
@@ -151,7 +157,8 @@ $libri = getAllBooks($mysqli);
                     </div>
                     <div class="modal-footer border-0">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Chiudi</button>
-                        <button type="submit" class="btn btn-primary" name="action" value="add">Aggiungi il libro</button>
+                        <button type="submit" class="btn btn-primary" name="action" value="add">Aggiungi il
+                            libro</button>
                     </div>
                 </form>
             </div>
