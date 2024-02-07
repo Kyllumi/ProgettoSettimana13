@@ -4,24 +4,19 @@ body {
 }
 
 .navbar {
-    background-color: #673ab7;
-    border-radius: 10px;
+    background-color: #077796;
 }
 
-.navbar-brand,
-.navbar-nav .nav-link {
-    color: #fff !important;
-}
 
 .btn-primary {
-    background-color: #673ab7;
-    border-color: #673ab7;
+    background-color: #077796;
+    border-color: #077796;
     border-radius: 10px;
 }
 
 .btn-primary:hover {
-    background-color: #5e35b1;
-    border-color: #5e35b1;
+    background-color: #065e76;
+    border-color: #065e76;
 }
 
 .table {
@@ -29,13 +24,13 @@ body {
 }
 
 .table-dark {
-    background-color: #673ab7;
+    background-color: #077796;
     border-radius: 10px;
 }
 
 .table-dark th,
 .table-dark td {
-    border-color: #673ab7;
+    border-color: #077796;
 }
 
 .table-dark th {
@@ -48,7 +43,7 @@ body {
 }
 
 .modal-header {
-    background-color: #673ab7;
+    background-color: #077796;
     color: #fff;
     border-radius: 15px 15px 0 0;
 }
@@ -65,16 +60,52 @@ body {
 
 .btn-secondary,
 .btn-secondary:hover {
-    background-color: #5e35b1;
-    border-color: #5e35b1;
+    background-color: #065e76;
+    border-color: #065e76;
     color: #fff;
     border-radius: 10px;
 }
 
 .footer {
-    background-color: #673ab7;
+    background-color: #077796;
     color: #fff;
     text-align: center;
     padding: 20px 0;
     border-radius: 15px;
+}
+
+.modificaBtn {
+    background-color: #2B91BA;
+    border-color: #2B91BA;
+    border-radius: 10px;
+    color: #fff;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.modificaBtn:hover {
+    background-color: #17546c;
+    border-color: #17546c;
+    color: #fff;
+}
+
+.eliminaBtn {
+    background-color: #ff4f5a;
+    border-color: #ff4f5a;
+    border-radius: 10px;
+    color: #fff;
+    transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+.eliminaBtn:hover {
+    background-color: #ff2731;
+    border-color: #ff2731;
+    color: #fff;
+}
+
+footer {
+    background-color: #333;
+    color: #767272;
+    padding: 2rem;
+    text-align: center;
+    width: 100vw;
 }
